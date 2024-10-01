@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 // ignore: depend_on_referenced_packages
 import 'package:latlong2/latlong.dart';
-
+import 'package:map_of_canada/Constant/strings.dart';
 // ignore: depend_on_referenced_packages
 import 'package:vector_map_tiles/vector_map_tiles.dart';
 import 'package:vector_map_tiles_pmtiles/vector_map_tiles_pmtiles.dart';

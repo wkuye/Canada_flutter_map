@@ -16,7 +16,7 @@ class MapPage extends StatefulWidget {
   @override
   State<MapPage> createState() => _MapPageState();
 }
-
+// add your supabase get url here
 const String tileSource ='';
 
 class _MapPageState extends State<MapPage> {

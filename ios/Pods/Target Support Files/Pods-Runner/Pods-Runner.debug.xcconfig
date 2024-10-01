@@ -1,0 +1,16 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/app_links"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift
+LIBRARY_SEARCH_PATHS = $(inherited) "${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" "${PODS_CONFIGURATION_BUILD_DIR}/app_links" "${PODS_CONFIGURATION_BUILD_DIR}/path_provider_foundation" "${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences_foundation" "${PODS_CONFIGURATION_BUILD_DIR}/url_launcher_ios" /usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)/ $(SDKROOT)/usr/lib/swift
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/app_links/app_links.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/path_provider_foundation/path_provider_foundation.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences_foundation/shared_preferences_foundation.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/url_launcher_ios/url_launcher_ios.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"app_links" -l"path_provider_foundation" -l"shared_preferences_foundation" -l"url_launcher_ios"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/app_links/app_links.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/path_provider_foundation/path_provider_foundation.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences_foundation/shared_preferences_foundation.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/url_launcher_ios/url_launcher_ios.modulemap"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/app_links" "${PODS_CONFIGURATION_BUILD_DIR}/path_provider_foundation" "${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences_foundation" "${PODS_CONFIGURATION_BUILD_DIR}/url_launcher_ios"
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

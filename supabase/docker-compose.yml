@@ -1,0 +1,40 @@
+
+services:
+  db:
+    image: postgres
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: yourusername
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: yourdatabase
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  api:
+    image: postgrest/postgrest:latest
+    container_name: supabase_api
+    environment:
+      PGRST_DB_URI: postgres://yourusername:yourpassword@db:5432/yourdatabase
+      PGRST_DB_SCHEMA: public
+      PGRST_DB_ANON_ROLE: anon
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+
+  kong:
+    image: kong:2.8.1
+    container_name: kong_gateway
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: db
+      KONG_PG_USER: yourusername
+      KONG_PG_PASSWORD: yourpassword
+      KONG_PROXY_LISTEN: "0.0.0.0:8000"
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
